@@ -7,6 +7,7 @@
 ## SASxport package and tidyverse (just in case it's needed)
 library(tidyverse)
 library(SASxport)
+library(usethis)
 
 
 
