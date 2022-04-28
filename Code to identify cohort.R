@@ -138,7 +138,7 @@ ed_1516_all <- cohort_1516 %>%
   mutate(
     inc = 1
   ) %>% 
-  select(SEQN, inc)
+  select(SEQN, htn, htn_bp, htn_meds, SDDSRVYR, RIAGENDR, RIDAGEYR, RIDRETH3, DMDEDUC2, WTMEC2YR, SDMVPSU, SDMVSTRA, INDFMPIR, inc)
 
 #education cohort (htn)
 ed_1516_htn <- cohort_1516 %>% 
@@ -147,7 +147,7 @@ ed_1516_htn <- cohort_1516 %>%
   mutate(
     inc = 1
   ) %>% 
-  select(SEQN, inc)
+  select(SEQN, htn, htn_bp, htn_meds, SDDSRVYR, RIAGENDR, RIDAGEYR, RIDRETH3, DMDEDUC2, WTMEC2YR, SDMVPSU, SDMVSTRA, INDFMPIR, inc)
 
 #education cohort (meds)
 ed_1516_med <- cohort_1516 %>% 
@@ -157,7 +157,7 @@ ed_1516_med <- cohort_1516 %>%
   mutate(
     inc = 1
   ) %>% 
-  select(SEQN, inc)
+  select(SEQN, htn, htn_bp, htn_meds, SDDSRVYR, RIAGENDR, RIDAGEYR, RIDRETH3, DMDEDUC2, WTMEC2YR, SDMVPSU, SDMVSTRA, INDFMPIR, inc)
 
 
 
@@ -168,7 +168,7 @@ inc_1516_all <- cohort_1516 %>%
   mutate(
     inc = 1
   ) %>% 
-  select(SEQN, inc)
+  select(SEQN, htn, htn_bp, htn_meds, SDDSRVYR, RIAGENDR, RIDAGEYR, RIDRETH3, DMDEDUC2, WTMEC2YR, SDMVPSU, SDMVSTRA, INDFMPIR, inc)
 
 #income cohort (htn)
 inc_1516_htn <- cohort_1516 %>% 
@@ -177,7 +177,7 @@ inc_1516_htn <- cohort_1516 %>%
   mutate(
     inc = 1
   ) %>% 
-  select(SEQN, inc)
+  select(SEQN, htn, htn_bp, htn_meds, SDDSRVYR, RIAGENDR, RIDAGEYR, RIDRETH3, DMDEDUC2, WTMEC2YR, SDMVPSU, SDMVSTRA, INDFMPIR, inc)
 
 #income cohort (meds)
 inc_1516_med <- cohort_1516 %>% 
@@ -187,7 +187,7 @@ inc_1516_med <- cohort_1516 %>%
   mutate(
     inc = 1
   ) %>% 
-  select(SEQN, inc)
+  select(SEQN, htn, htn_bp, htn_meds, SDDSRVYR, RIAGENDR, RIDAGEYR, RIDRETH3, DMDEDUC2, WTMEC2YR, SDMVPSU, SDMVSTRA, INDFMPIR, inc)
 
 
 
@@ -236,7 +236,7 @@ ed_1718_all <- cohort_1718 %>%
   mutate(
     inc = 1
   ) %>% 
-  select(SEQN, inc)
+  select(SEQN, htn, htn_bp, htn_meds, SDDSRVYR, RIAGENDR, RIDAGEYR, RIDRETH3, DMDEDUC2, WTMEC2YR, SDMVPSU, SDMVSTRA, INDFMPIR, inc)
   
 
 #education cohort (htn) 
@@ -246,7 +246,7 @@ ed_1718_htn <- cohort_1718 %>%
   mutate(
     inc = 1
   ) %>% 
-  select(SEQN, inc) 
+  select(SEQN, htn, htn_bp, htn_meds, SDDSRVYR, RIAGENDR, RIDAGEYR, RIDRETH3, DMDEDUC2, WTMEC2YR, SDMVPSU, SDMVSTRA, INDFMPIR, inc) 
   
 
 #education cohort (meds)
@@ -257,7 +257,7 @@ ed_1718_med <- cohort_1718 %>%
   mutate(
     inc = 1
   ) %>% 
-  select(SEQN, inc)
+  select(SEQN, htn, htn_bp, htn_meds, SDDSRVYR, RIAGENDR, RIDAGEYR, RIDRETH3, DMDEDUC2, WTMEC2YR, SDMVPSU, SDMVSTRA, INDFMPIR, inc)
 
 
 
@@ -268,7 +268,7 @@ inc_1718_all <- cohort_1718 %>%
   mutate(
     inc = 1
   ) %>% 
-  select(SEQN, inc)
+  select(SEQN, htn, htn_bp, htn_meds, SDDSRVYR, RIAGENDR, RIDAGEYR, RIDRETH3, DMDEDUC2, WTMEC2YR, SDMVPSU, SDMVSTRA, INDFMPIR, inc)
 
 
 #income cohort (htn)
@@ -278,7 +278,7 @@ inc_1718_htn <- cohort_1718 %>%
   mutate(
     inc = 1
   ) %>% 
-  select(SEQN, inc)
+  select(SEQN, htn, htn_bp, htn_meds, SDDSRVYR, RIAGENDR, RIDAGEYR, RIDRETH3, DMDEDUC2, WTMEC2YR, SDMVPSU, SDMVSTRA, INDFMPIR, inc)
 
 
 #income cohort (med)
@@ -289,7 +289,7 @@ inc_1718_med <- cohort_1718 %>%
   mutate(
     inc = 1
   ) %>% 
-  select(SEQN, inc)
+  select(SEQN, htn, htn_bp, htn_meds, SDDSRVYR, RIAGENDR, RIDAGEYR, RIDRETH3, DMDEDUC2, WTMEC2YR, SDMVPSU, SDMVSTRA, INDFMPIR, inc)
 
 
 
