@@ -19,7 +19,24 @@ demo_1718 <- read_rds("rds_data/demo_j") %>%
   select(SEQN, SDDSRVYR, RIAGENDR, RIDAGEYR, RIDRETH3, DMDEDUC2, WTMEC2YR, SDMVPSU, SDMVSTRA, INDFMPIR)
 demographics <- bind_rows(
   demo_1516,
-  demo_1718)
+  demo_1718) %>% 
+  
+  mutate(
+    age_cat = case_when(
+      RIDAGEYR < 20 ~ "<20",
+      RIDAGEYR >= 20 & RIDAGEYR < 40 ~ "20-39",
+      RIDAGEYR >= 40 & RIDAGEYR < 60 ~ "40-59",
+      RIDAGEYR >= 60 ~ ">=60")) %>% 
+      
+    mutate(
+    race_cat = case_when(
+      RIDRETH3 %in% c(1,2) ~ 2,
+      RIDRETH3 %in% c(3) ~ 1,
+      RIDRETH3 %in% c(4) ~ 3,
+      RIDRETH3 %in% c(6) ~ 4,
+      RIDRETH3 %in% c(7) ~ 5))
+
+# data cleaning
 
 
 
@@ -75,5 +92,9 @@ med_inc_cohort <- read_rds("rds_data/med_inc_cohort") %>%
     by = "SEQN")
 
 
+
+
+
+# Data prep ----------------------------------------------------------
 
 
