@@ -125,7 +125,7 @@ cohort_1516 <- demo_1516 %>%
     htn_bp = if_else(sbp_avg < 140 & dbp_avg < 90, true =  0, false = 1),
     htn_meds = case_when(
       BPQ020 == 2 ~ 0,
-      BPQ040A == 2 | BPQ040A == 9 ~ 0,
+      BPQ040A == 2 ~ 0,
       BPQ050A == 2 ~ 0,
       BPQ050A == 1 ~ 1,
       TRUE ~ NA_real_),
@@ -134,7 +134,8 @@ cohort_1516 <- demo_1516 %>%
 
 #education cohort (full)
 ed_1516_all <- cohort_1516 %>% 
-  filter(!(DMDEDUC2 %in% c(7,9))) %>% 
+  filter(!(DMDEDUC2 %in% c(7,9))) %>%
+  filter(!is.na(htn_meds)) %>% 
   mutate(
     inc = 1
   ) %>% 
@@ -143,6 +144,7 @@ ed_1516_all <- cohort_1516 %>%
 #education cohort (htn)
 ed_1516_htn <- cohort_1516 %>% 
   filter(!(DMDEDUC2 %in% c(7,9))) %>% 
+  filter(!is.na(htn_meds)) %>% 
   filter(htn == 1)%>% 
   mutate(
     inc = 1
@@ -151,7 +153,8 @@ ed_1516_htn <- cohort_1516 %>%
 
 #education cohort (meds)
 ed_1516_med <- cohort_1516 %>% 
-  filter(!(DMDEDUC2 %in% c(7,9))) %>% 
+  filter(!(DMDEDUC2 %in% c(7,9))) %>%
+  filter(!is.na(htn_meds)) %>% 
   filter(htn == 1) %>% 
   filter(htn_meds == 1)%>% 
   mutate(
@@ -164,7 +167,8 @@ ed_1516_med <- cohort_1516 %>%
 
 #income cohort (full)
 inc_1516_all <- cohort_1516 %>% 
-  filter(!is.na(INDFMPIR))%>% 
+  filter(!is.na(INDFMPIR))%>%
+  filter(!is.na(htn_meds)) %>% 
   mutate(
     inc = 1
   ) %>% 
@@ -172,7 +176,8 @@ inc_1516_all <- cohort_1516 %>%
 
 #income cohort (htn)
 inc_1516_htn <- cohort_1516 %>% 
-  filter(!is.na(INDFMPIR)) %>% 
+  filter(!is.na(INDFMPIR)) %>%
+  filter(!is.na(htn_meds)) %>% 
   filter(htn == 1)%>% 
   mutate(
     inc = 1
@@ -181,7 +186,8 @@ inc_1516_htn <- cohort_1516 %>%
 
 #income cohort (meds)
 inc_1516_med <- cohort_1516 %>% 
-  filter(!is.na(INDFMPIR)) %>% 
+  filter(!is.na(INDFMPIR)) %>%
+  filter(!is.na(htn_meds)) %>% 
   filter(htn == 1) %>% 
   filter(htn_meds == 1)%>% 
   mutate(
@@ -223,7 +229,7 @@ cohort_1718 <- demo_1718 %>%
     htn_bp = if_else(sbp_avg < 140 & dbp_avg < 90, true =  0, false = 1),
     htn_meds = case_when(
       BPQ020 == 2 ~ 0,
-      BPQ040A == 2 | BPQ040A == 9 ~ 0,
+      BPQ040A == 2 ~ 0,
       BPQ050A == 2 ~ 0,
       BPQ050A == 1 ~ 1,
       TRUE ~ NA_real_),
@@ -232,7 +238,8 @@ cohort_1718 <- demo_1718 %>%
 
 #education cohort (all)
 ed_1718_all <- cohort_1718 %>%
-  filter(!(DMDEDUC2 %in% c(7,9)))%>% 
+  filter(!(DMDEDUC2 %in% c(7,9)))%>%
+  filter(!is.na(htn_meds)) %>% 
   mutate(
     inc = 1
   ) %>% 
@@ -241,7 +248,8 @@ ed_1718_all <- cohort_1718 %>%
 
 #education cohort (htn) 
 ed_1718_htn <- cohort_1718 %>%
-  filter(!(DMDEDUC2 %in% c(7,9))) %>% 
+  filter(!(DMDEDUC2 %in% c(7,9))) %>%
+  filter(!is.na(htn_meds)) %>% 
   filter(htn == 1)%>% 
   mutate(
     inc = 1
@@ -251,7 +259,8 @@ ed_1718_htn <- cohort_1718 %>%
 
 #education cohort (meds)
 ed_1718_med <- cohort_1718 %>%
-  filter(!(DMDEDUC2 %in% c(7,9))) %>% 
+  filter(!(DMDEDUC2 %in% c(7,9))) %>%
+  filter(!is.na(htn_meds)) %>% 
   filter(htn == 1) %>% 
   filter(htn_meds == 1)%>% 
   mutate(
@@ -264,7 +273,8 @@ ed_1718_med <- cohort_1718 %>%
 
 #income cohort (all)
 inc_1718_all <- cohort_1718 %>% 
-  filter(!is.na(INDFMPIR))%>% 
+  filter(!is.na(INDFMPIR))%>%
+  filter(!is.na(htn_meds)) %>% 
   mutate(
     inc = 1
   ) %>% 
@@ -273,7 +283,8 @@ inc_1718_all <- cohort_1718 %>%
 
 #income cohort (htn)
 inc_1718_htn <- cohort_1718 %>% 
-  filter(!is.na(INDFMPIR)) %>% 
+  filter(!is.na(INDFMPIR)) %>%
+  filter(!is.na(htn_meds)) %>% 
   filter(htn == 1)%>% 
   mutate(
     inc = 1
@@ -283,7 +294,8 @@ inc_1718_htn <- cohort_1718 %>%
 
 #income cohort (med)
 inc_1718_med <- cohort_1718 %>% 
-  filter(!is.na(INDFMPIR)) %>% 
+  filter(!is.na(INDFMPIR)) %>%
+  filter(!is.na(htn_meds)) %>% 
   filter(htn == 1) %>% 
   filter(htn_meds == 1)%>% 
   mutate(
